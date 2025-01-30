@@ -25,7 +25,6 @@
     {% set source_image_path = seo.image.path %}
     {% set original_image_path = source_image_path|imagine_filter('sylius_shop_seo_image') %}
   {% endif %}
-
     {% if seo.pageTitle %}
       document.title = '{{ seo.pageTitle }}';
     {% endif %}
@@ -56,7 +55,7 @@
       appendHtml(document.head, '<meta name="og:image" content="{{ original_image_path }}" />');
     {% endif %}
     {% if seo.extraTags is not empty %}
-      appendHtml(document.head,'{{ seo.extraTags|e('js') }}');
+      appendHtml(document.head,'<meta name="keywords" content="{{ seo.extraTags|e('js') }}">');
     {% endif %}
   {% else %}
     appendHtml(document.head, '<meta name="twitter:title" content="{{ original_resource.name|e('js') }}" />');
