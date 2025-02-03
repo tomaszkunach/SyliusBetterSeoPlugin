@@ -55,7 +55,7 @@
       appendHtml(document.head, '<meta name="og:image" content="{{ original_image_path }}" />');
     {% endif %}
     {% if seo.extraTags is not empty %}
-      appendHtml(document.head,'<meta name="keywords" content="{{ seo.extraTags|e('js') }}">');
+      appendHtml(document.head,'{{ seo.extraTags|e('js') }}');
     {% endif %}
   {% else %}
     appendHtml(document.head, '<meta name="twitter:title" content="{{ original_resource.name|e('js') }}" />');

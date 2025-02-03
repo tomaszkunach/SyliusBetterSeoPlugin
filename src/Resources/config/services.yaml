@@ -11,21 +11,24 @@ services:
 
     joppedc_sylius_better_seo_plugin.seo.form.type:
         class: JoppeDc\SyliusBetterSeoPlugin\Form\Type\SeoType
+        arguments:
+            $dataClass: '%sylius_better_seo_plugin.model.seo.class%'
         tags:
             - { name: form.type }
-        arguments: ['JoppeDc\SyliusBetterSeoPlugin\Entity\Seo']
 
     joppedc_sylius_better_seo_plugin.seo_translation.form.type:
         class: JoppeDc\SyliusBetterSeoPlugin\Form\Type\SeoTranslationType
+        arguments:
+            $dataClass: '%sylius_better_seo_plugin.model.seo_translation.class%'
         tags:
             - { name: form.type }
-        arguments: ['JoppeDc\SyliusBetterSeoPlugin\Entity\SeoTranslation']
 
     joppedc_sylius_better_seo_plugin.seo_image.type.form.type:
         class: JoppeDc\SyliusBetterSeoPlugin\Form\Type\SeoImageType
+        arguments:
+            $dataClass: '%sylius_better_seo_plugin.model.seo_image.class%'
         tags:
             - { name: form.type }
-        arguments: ['JoppeDc\SyliusBetterSeoPlugin\Entity\SeoImage']
 
     joppedc_sylius_better_seo_plugin.listener.images_upload:
         class: JoppeDc\SyliusBetterSeoPlugin\EventListener\SeoTranslationImagesUploadListener

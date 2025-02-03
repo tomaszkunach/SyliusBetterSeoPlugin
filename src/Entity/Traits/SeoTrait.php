@@ -8,12 +8,11 @@ use Doctrine\ORM\Mapping as ORM;
 use Doctrine\ORM\Mapping\JoinColumn;
 use Doctrine\ORM\Mapping\OneToOne;
 use JoppeDc\SyliusBetterSeoPlugin\Entity\SeoInterface;
-use JoppeDc\SyliusBetterSeoPlugin\Entity\Seo;
 
 trait SeoTrait
 {
     #[OneToOne(
-        targetEntity: Seo::class,
+        targetEntity: SeoInterface::class,
         cascade: ['all'],
     )]
     #[JoinColumn(name: 'seo_id', referencedColumnName: 'id', nullable: true)]
